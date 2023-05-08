@@ -1,8 +1,10 @@
-<div>
+<div class="encabeazado">
   <h1>{{ title }}</h1>
 </div>
 
-<div>
-  <li *ngFor="let item of opciones">
-    <p>{{ item }}</p>
+<div class="formulario">
+  <li *ngFor="let item of opciones | keyvalue">
+    <p> {{ item.value }} </p>
+  </li>
+  <app-inicio></app-inicio>
 </div>
