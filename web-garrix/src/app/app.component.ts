@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Cumpleaños de Garrix';
+  opciones = [
+    {1: 'HairSo'},
+    {2: 'Turramitica'},
+    {3: 'Cars (mcqueen)'},
+    {4: 'PinBA'},
+  ]
 }
