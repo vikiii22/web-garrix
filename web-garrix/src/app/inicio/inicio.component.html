@@ -1,3 +1,14 @@
-<li *ngFor="let item of opciones | keyvalue">
-    <p> {{ item.value }} </p>
-</li>
+<mat-expansion-panel *ngFor="let item of planes; let i = index;" class="expansion">
+    <mat-expansion-panel-header>
+      <mat-panel-title id="title">
+        {{ item.opcion }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-panel-description id="description">
+        {{ item.texto }}
+    </mat-panel-description>
+    <button (click)="changeColor(i)" [ngStyle]="{'color': item.color}" mat-fab color="warn" aria-label="Example icon button with a heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+</mat-expansion-panel>
+  
