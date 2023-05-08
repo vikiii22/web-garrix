@@ -1,5 +1,5 @@
 # Como iniciar el proyecto
 ## Instalación
-# npm install
+ npm install
 ## Ejecución
-# ng serve
+ ng serve
