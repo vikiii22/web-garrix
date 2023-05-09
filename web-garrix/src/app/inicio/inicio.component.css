@@ -2,6 +2,7 @@
     margin: 5%;
     padding-right: 25%;
     padding-left: 25%;
+    background-color: rgba(236, 224, 224, 0.616);
 }
 
 #title{
@@ -17,13 +18,25 @@
 
 button{
     color: black;
+    background-color: rgba(107, 105, 105, 0.548)
 }
 
 button:hover{
     color: red;
-    background-color: rgba(107, 105, 105, 0.548)
+    background-color: rgba(71, 71, 71, 0.548)
 }
 
 button:visited{
     color: red
+}
+
+.enviar{
+    background-color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: 10%;
+}
+
+.enviar:hover{
+    color: rgb(243, 198, 245);
 }
