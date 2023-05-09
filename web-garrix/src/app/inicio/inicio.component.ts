@@ -34,6 +34,12 @@ export class InicioComponent {
       texto: 'Si te gusta la acción pero prefieres algo más tranquilo que el airsoft, entonces el paintball es para ti. Es una actividad en la que utilizamos pistolas de pintura para disparar a nuestros oponentes. Será una oportunidad para demostrar tus habilidades de puntería y estrategia.',
       marked: false,
       color: 'black'
+    },
+    {
+      opcion: 'Escape rum',
+      texto: ' "¿Te imaginas estar en una habitación misteriosa con acertijos por resolver para escapar? Bueno, eso es exactamente lo que haremos este fin de semana. ¿Te unes?"',
+      marked: false,
+      color: 'black'
     }
   ];
 
