@@ -32,6 +32,9 @@ button:visited{
 
 .enviar{
     background-color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: 10%;
 }
 
 .enviar:hover{

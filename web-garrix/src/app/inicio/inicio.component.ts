@@ -58,7 +58,9 @@ export class InicioComponent {
       this.planes[pos].marked = true; // marcamos el botón actual
       this.planes[pos].color = 'red';
     }
+  }
 
+  enviar(){
     this.planes.find(plan => {
       if (plan.marked) {
         console.log("Opcion elegida " + plan.opcion);
