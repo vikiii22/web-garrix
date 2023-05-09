@@ -29,3 +29,11 @@ button:hover{
 button:visited{
     color: red
 }
+
+.enviar{
+    background-color: white;
+}
+
+.enviar:hover{
+    color: rgb(243, 198, 245);
+}
