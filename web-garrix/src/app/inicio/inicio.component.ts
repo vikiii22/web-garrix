@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Plan } from './interface-plan';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../dialog/dialog.component';
 import { Dialog } from '@angular/cdk/dialog';
 
 
