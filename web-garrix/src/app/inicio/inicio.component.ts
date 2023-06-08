@@ -14,7 +14,6 @@ import { Dialog } from '@angular/cdk/dialog';
 export class InicioComponent {
   mensaje: string = "";
 
-  constructor(public dialog:MatDialog) { }
 
   planes: Plan[] = [
     {
@@ -74,7 +73,7 @@ export class InicioComponent {
       }
     }
     );
-    this.dialog.open(Dialog, {data: {mensaje: this.mensaje}});
+    // añadir post para enviar el mensaje
   }
   
-}
+} 
