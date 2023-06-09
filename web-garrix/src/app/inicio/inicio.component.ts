@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Plan } from './interface-plan';
-// import * as nodemailer from 'nodemailer';
+import { MatDialog } from '@angular/material/dialog';
+import { Dialog } from '@angular/cdk/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
 
 
 
@@ -10,8 +12,10 @@ import { Plan } from './interface-plan';
   styleUrls: ['./inicio.component.css']
 })
 
-
 export class InicioComponent {
+  mensaje: string = "";
+  overView: string = "";
+
 
   planes: Plan[] = [
     {
@@ -46,6 +50,19 @@ export class InicioComponent {
     }
   ];
 
+  constructor(private dialog: MatDialog) { }
+
+  openDialog(mensaje: string, overView: string): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '30%',
+      height: '30%',
+      data: { mensaje: mensaje, overView: overView }
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      // Puedes realizar acciones después de que se cierre el diálogo si es necesario
+    });
+  }  
   
   changeColor(pos: number) {
     if (this.planes[pos].marked) {
@@ -64,41 +81,14 @@ export class InicioComponent {
   }
 
   enviar(){
-
-    // const nodemailerUso = require(nodemailer);
-
-    // let transporter = nodemailerUso.createTransport({
-    //   service: 'gmail',
-    //   auth: {
-    //     user: 'richardromero.gog@gmail.com', // Correo electrónico que enviará el correo
-    //     pass: 'Y^97vE96RVgU2cG' // Contraseña del correo electrónico
-    //   }
-    // });
-
-    // let mensaje=""
     this.planes.find(plan => {
       if (plan.marked) {
         console.log("Opcion elegida " + plan.opcion);
-        // mensaje = plan.opcion;
+        this.mensaje = plan.opcion;
+        this.overView = plan.texto;
       }
-    }
-    );
-
-    // let mailOptions = {
-    //   from: 'tuscolegas@gmail.com', // Correo electrónico que enviará el correo
-    //   to: 'joseviki10@gmail.com', // Correo electrónico del destinatario
-    //   subject: 'Enhorabuena, has contribuido a salvar el mundo',
-    //   text: mensaje
-    // };
-
-    // transporter.sendMail(mailOptions, function(error: any, info: { response: string; }){
-    //   if (error) {
-    //     console.log(error);
-    //   } else {
-    //     console.log('Correo electrónico enviado: ' + info.response);
-    //   }
-    // });
-
+    });
+    (this.mensaje == "") ? "" : this.openDialog(this.mensaje, this.overView);
   }
   
-}
+} 
