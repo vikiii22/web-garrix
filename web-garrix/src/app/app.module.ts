@@ -9,6 +9,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 
@@ -17,6 +18,7 @@ import {MatDialogModule} from '@angular/material/dialog';
   declarations: [
     AppComponent,
     InicioComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,

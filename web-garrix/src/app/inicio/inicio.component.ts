@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Plan } from './interface-plan';
 import { MatDialog } from '@angular/material/dialog';
 import { Dialog } from '@angular/cdk/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
 
 
 
@@ -13,6 +14,7 @@ import { Dialog } from '@angular/cdk/dialog';
 
 export class InicioComponent {
   mensaje: string = "";
+  overView: string = "";
 
 
   planes: Plan[] = [
@@ -48,6 +50,19 @@ export class InicioComponent {
     }
   ];
 
+  constructor(private dialog: MatDialog) { }
+
+  openDialog(mensaje: string, overView: string): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '30%',
+      height: '30%',
+      data: { mensaje: mensaje, overView: overView }
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      // Puedes realizar acciones después de que se cierre el diálogo si es necesario
+    });
+  }  
   
   changeColor(pos: number) {
     if (this.planes[pos].marked) {
@@ -70,10 +85,10 @@ export class InicioComponent {
       if (plan.marked) {
         console.log("Opcion elegida " + plan.opcion);
         this.mensaje = plan.opcion;
+        this.overView = plan.texto;
       }
-    }
-    );
-    // añadir post para enviar el mensaje
+    });
+    (this.mensaje == "") ? "" : this.openDialog(this.mensaje, this.overView);
   }
   
 } 
